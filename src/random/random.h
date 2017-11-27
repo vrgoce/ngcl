@@ -15,6 +15,7 @@ public:
     int randi();
     int randb(int base);
     double rand1();
+    void feed(const unsigned char *input, unsigned int length);
 
 private:
     Random(Random const&);

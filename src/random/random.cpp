@@ -78,6 +78,11 @@ double Random::rand1()
     return 1/ret;
 }
 
+void Random::feed(const unsigned char *input, unsigned int length)
+{
+    m_rng->feed(input, length);
+}
+
 void Random::cleanUp()
 {
     if(m_rng)
