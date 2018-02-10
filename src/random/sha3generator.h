@@ -4,9 +4,9 @@
 
 #ifndef SHA3GENERATOR_H
 #define SHA3GENERATOR_H
-#include "../external/hash-library/sha3.h"
 #include "hashgenerator.h"
 
+class SHA3;
 /**
  * @brief The SHA3Generator class Implementation of the hash generator that use SHA 3 as hashing algorithm.
  */
@@ -20,7 +20,7 @@ public:
     void Final(char unsigned *digest);
 
 private:
-    SHA3 m_sha;
+    SHA3* m_sha;
 };
 
 #endif // SHA3GENERATOR_H

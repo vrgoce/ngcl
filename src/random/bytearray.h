@@ -4,6 +4,7 @@
 
 #ifndef BYTEARRAY_H
 #define BYTEARRAY_H
+
 #include <string.h>
 #include <sstream>
 #include "serialize.h"

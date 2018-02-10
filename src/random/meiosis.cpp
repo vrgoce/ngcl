@@ -1,3 +1,7 @@
+// Copyright (C) 2017 Goce Vrglevski <gocevrglevski@gmail.com>
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #include "meiosis.h"
 #include "sha3generator.h"
 #include "serialize.h"

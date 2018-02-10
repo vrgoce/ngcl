@@ -1,5 +1,9 @@
-#ifndef RANDOMGENERATOR_H
-#define RANDOMGENERATOR_H
+// Copyright (C) 2017 Goce Vrglevski <gocevrglevski@gmail.com>
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#ifndef RNG_H
+#define RNG_H
 
 #include "bytearray.h"
 #include "hashgenerator.h"
@@ -39,4 +43,4 @@ protected:
     HashGenerator* m_hash;
 };
 
-#endif // RANDOMGENERATOR_H
+#endif // RNG_H

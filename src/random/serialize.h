@@ -1,3 +1,7 @@
+// Copyright (C) 2017 Goce Vrglevski <gocevrglevski@gmail.com>
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #ifndef SERIALIZE_H
 #define SERIALIZE_H
 
@@ -99,6 +103,25 @@ inline std::string bin2hex(const unsigned char* src, int length)
         target += dec2hex[src[i] & 15];
     }
     return target;
+}
+
+inline bool isHexStr(const std::string& str)
+{
+    for(size_t i = 0; i < str.length(); i++)
+    {
+        char c = str[i];
+        if((c >= '0' && c <= '9') ||
+                (c >= 'a' && c <= 'z') ||
+                (c >= 'A' && c <= 'Z'))
+        {
+            continue;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 }
