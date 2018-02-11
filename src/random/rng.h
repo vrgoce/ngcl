@@ -16,11 +16,11 @@ class RNG
 public:
     virtual uint256_t generate() = 0;
 
-    void feed(const unsigned char *input, unsigned int length)
+    void feed(const char *input, unsigned int length)
     {
         if(m_hash)
         {
-            m_hash->Update(input, length);
+            m_hash->Update((const unsigned char *)input, length);
         }
     }
 

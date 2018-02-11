@@ -49,7 +49,7 @@ public:
      * @param input Input charsequence
      * @param length Length of the sequence
      */
-    void feed(const unsigned char *input, unsigned int length);
+    void feed(const char *input, unsigned int length);
 
     /**
      * @brief randr Fill the container with raw form of random data

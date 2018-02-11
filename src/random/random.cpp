@@ -27,11 +27,11 @@ public:
 
             if(!key1.empty())
             {
-                m_rng->feed((const unsigned char *)key1.c_str(), key1.length());
+                m_rng->feed(key1.c_str(), key1.length());
             }
             if(!key2.empty())
             {
-                m_rng->feed((const unsigned char *)key2.c_str(), key2.length());
+                m_rng->feed(key2.c_str(), key2.length());
             }
         }
     }
@@ -70,7 +70,7 @@ void Random::skip(unsigned int size)
     }
 }
 
-void Random::feed(const unsigned char *input, unsigned int length)
+void Random::feed(const char *input, unsigned int length)
 {
     d->m_randSize = -1;
     d->m_rng->feed(input, length);
