@@ -9,6 +9,8 @@
 #include "serialize.h"
 #include "bytearray.h"
 
+#include <stdlib.h>
+
 class RandomPrivate
 {
 public:
