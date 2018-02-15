@@ -1,6 +1,6 @@
-#include "crypto.h"
-#include "../random/serialize.h"
-#include "../random/random.h"
+#include "../include/crypto.h"
+#include "../include/random.h"
+#include "serialize.h"
 
 #define HEX_KEY_SIZE 64
 #define MASTER_BUFFER_SIZE 32

@@ -4,7 +4,7 @@
 
 #include "sha3generator.h"
 #include "serialize.h"
-#include "../external/hash-library/sha3.h"
+#include "external/hash-library/sha3.h"
 
 SHA3Generator::SHA3Generator():
     m_sha(0)
