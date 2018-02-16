@@ -16,19 +16,9 @@ class CryptoPrivate;
 class Crypto
 {
 public:
-    /**
-     * @brief The EnrandType enum Types of Master Keys that can be generated for encryption/decryption.
-     * We call "Enrand" the operation of encryption and decryption using random numbers.
-     */
-    enum EnrandType
-    {
-        // Vanilla ice-cream - no modification to the RNG stream, the whole stream is the Master Key
-        Vanilla = 0,
-    };
+    Crypto(std::string key1, std::string key2);
 
-    Crypto(std::string key1, std::string key2, Crypto::EnrandType type = Crypto::Vanilla);
-
-    Crypto(std::string key, Crypto::EnrandType type = Crypto::Vanilla);
+    Crypto(std::string key);
 
     ~Crypto();
 

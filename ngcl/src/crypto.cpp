@@ -8,33 +8,31 @@
 class CryptoPrivate
 {
 public:
-    CryptoPrivate(std::string key1, std::string key2, Crypto::EnrandType _type):
-        rng(key1, key2),
-        type(_type)
+    CryptoPrivate(std::string key1, std::string key2):
+        rng(key1, key2)
     {}
 
     Random rng;
-    Crypto::EnrandType type;
     char masterKeyBuffer[MASTER_BUFFER_SIZE];
 };
 
-Crypto::Crypto(std::string key1, std::string key2, Crypto::EnrandType type)
+Crypto::Crypto(std::string key1, std::string key2)
 {
     if(key1.size() != HEX_KEY_SIZE || key2.size() != HEX_KEY_SIZE ||
             !serialize::isHexStr(key1) || !serialize::isHexStr(key2))
         throw "Fail to create the Master Key";
 
-    d = new CryptoPrivate(key1, key2, type);
+    d = new CryptoPrivate(key1, key2);
 }
 
-Crypto::Crypto(std::string key, Crypto::EnrandType type)
+Crypto::Crypto(std::string key)
 {
     if(key.size() != HEX_KEY_SIZE * 2 || !serialize::isHexStr(key))
         throw "Fail to create the Master Key";
 
     std::string key1 = key.substr(0, HEX_KEY_SIZE);
     std::string key2 = key.substr(HEX_KEY_SIZE);
-    d = new CryptoPrivate(key1, key2, type);
+    d = new CryptoPrivate(key1, key2);
 }
 
 Crypto::~Crypto()
