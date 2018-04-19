@@ -14,7 +14,7 @@
 class RNG
 {
 public:
-    virtual uint256_t generate() = 0;
+    virtual byteArray32 generate() = 0;
 
     void feed(const char *input, unsigned int length)
     {

@@ -39,7 +39,7 @@ public:
     }
 
     RNG* m_rng;
-    uint256_t m_randData;
+    byteArray32 m_randData;
     int m_randSize;
 };
 

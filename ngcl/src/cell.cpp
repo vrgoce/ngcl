@@ -4,7 +4,7 @@
 
 #include "cell.h"
 
-Cell::Cell(const uint256_t &motherChromosomes, const uint256_t &fatherChromosomes, const uint32_t &telomereSize, bool imortal):
+Cell::Cell(const byteArray32 &motherChromosomes, const byteArray32 &fatherChromosomes, const uint32_t &telomereSize, bool imortal):
     m_motherChromosomes(motherChromosomes),
     m_fatherChromosomes(fatherChromosomes),
     m_currentTelomereSize(telomereSize),
@@ -23,14 +23,14 @@ bool Cell::isNearEnd()
     return !m_imortal && m_currentTelomereSize < 3;
 }
 
-void Cell::restart(const uint256_t &motherChromosomes, const uint256_t &fatherChromosomes)
+void Cell::restart(const byteArray32 &motherChromosomes, const byteArray32 &fatherChromosomes)
 {
     m_motherChromosomes = motherChromosomes;
     m_fatherChromosomes = fatherChromosomes;
     m_currentTelomereSize = m_telomereSize;
 }
 
-bool Cell::flip(uint32_t bitNumber, uint256_t &chromosomes)
+bool Cell::flip(uint32_t bitNumber, byteArray32 &chromosomes)
 {
     uint32_t currentByte = bitNumber / 8;
     uint32_t currentBit = bitNumber % 8;
@@ -52,7 +52,7 @@ bool Cell::flip(uint32_t bitNumber)
                 flip(bitNumber - chromosomesSize, m_fatherChromosomes);
 }
 
-bool Cell::rotate(uint32_t byteNumber, uint256_t &chromosomes)
+bool Cell::rotate(uint32_t byteNumber, byteArray32 &chromosomes)
 {
     if(byteNumber < chromosomes.size())
     {
@@ -105,8 +105,8 @@ void Cell::setRestarting(bool restarting)
     m_restarting = restarting;
 }
 
-uint256_t Cell::generate()
+byteArray32 Cell::generate()
 {
     // dummy implementation
-    return uint256_t();
+    return byteArray32();
 }

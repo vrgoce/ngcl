@@ -11,13 +11,13 @@
 class Meiosis : public Cell
 {
 public:
-    Meiosis(const uint256_t& motherChromosomes, const uint256_t& fatherChromosomes, const uint32_t& telomereSize = 179424673, bool imortal = false);
+    Meiosis(const byteArray32& motherChromosomes, const byteArray32& fatherChromosomes, const uint32_t& telomereSize = 179424673, bool imortal = false);
 
     /**
      * @brief generate Generate new 32 bytes hash
      * @return New random number
      */
-    uint256_t generate();
+    byteArray32 generate();
 
 private:
     uint32_t m_padding;

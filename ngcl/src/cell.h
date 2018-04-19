@@ -22,7 +22,7 @@ public:
      * it will stop dividing when they telomere become too short
      * @param imortal Is the cell immortal, if the cell is immortal will not die when the telomere become too short
      */
-    Cell(const uint256_t& motherChromosomes, const uint256_t& fatherChromosomes, const uint32_t& telomereSize, bool imortal);
+    Cell(const byteArray32& motherChromosomes, const byteArray32& fatherChromosomes, const uint32_t& telomereSize, bool imortal);
 
     /**
      * @brief divided Set that the division process is finished, the telomere will be shortened
@@ -40,7 +40,7 @@ public:
      * @param motherChromosomes Chromosomes inherited from the mother
      * @param fatherChromosomes Chromosomes inherited from the father
      */
-    void restart(const uint256_t& motherChromosomes, const uint256_t& fatherChromosomes);
+    void restart(const byteArray32& motherChromosomes, const byteArray32& fatherChromosomes);
 
     /**
      * @brief flip Mutate one letter in the chromosomes set
@@ -48,7 +48,7 @@ public:
      * @param chromosomes Chromosomes set to be mutated
      * @return Success of the operation
      */
-    static bool flip(uint32_t bitNumber, uint256_t& chromosomes);
+    static bool flip(uint32_t bitNumber, byteArray32& chromosomes);
 
     /**
      * @brief flip Mutate one letter in the chromosomes set
@@ -63,7 +63,7 @@ public:
      * @param chromosomes Chromosomes set to be mutated
      * @return Success of the operation
      */
-    static bool rotate(uint32_t byteNumber, uint256_t& chromosomes);
+    static bool rotate(uint32_t byteNumber, byteArray32& chromosomes);
 
     /**
      * @brief rotate Rotate byte in the the chromosomes set
@@ -105,11 +105,11 @@ public:
      * @brief generate Generate new 32 bytes hash
      * @return New random number
      */
-    uint256_t generate();
+    byteArray32 generate();
 
 protected:
-    uint256_t m_motherChromosomes;
-    uint256_t m_fatherChromosomes;
+    byteArray32 m_motherChromosomes;
+    byteArray32 m_fatherChromosomes;
     uint32_t m_currentTelomereSize;
     uint32_t m_telomereSize;
     bool m_imortal;

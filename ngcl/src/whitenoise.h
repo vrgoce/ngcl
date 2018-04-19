@@ -30,7 +30,7 @@ public:
      * @brief generate Generate new 32 bytes hash
      * @return New random number
      */
-    uint256_t generate();
+    byteArray32 generate();
 
     /**
      * @brief WhiteNoise Constructor

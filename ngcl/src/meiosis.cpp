@@ -18,7 +18,7 @@ static const unsigned int TotalBytesPrime = 61;
 static const unsigned int ParentBytesPrime = 31;
 
 
-Meiosis::Meiosis(const uint256_t &motherChromosomes, const uint256_t &fatherChromosomes, const uint32_t &telomereSize, bool imortal):
+Meiosis::Meiosis(const byteArray32 &motherChromosomes, const byteArray32 &fatherChromosomes, const uint32_t &telomereSize, bool imortal):
     Cell(motherChromosomes, fatherChromosomes, telomereSize, imortal),
     m_padding(0)
 {
@@ -27,7 +27,7 @@ Meiosis::Meiosis(const uint256_t &motherChromosomes, const uint256_t &fatherChro
     generate();
 }
 
-uint256_t Meiosis::generate()
+byteArray32 Meiosis::generate()
 {
     //Restart the process
     if(!restarting() && isNearEnd())
@@ -38,7 +38,7 @@ uint256_t Meiosis::generate()
     }
 
     //Generate random number
-    uint256_t randomNumber, mutateNumber;
+    byteArray32 randomNumber, mutateNumber;
     m_hash->Update(m_motherChromosomes, m_motherChromosomes.size());
     m_hash->Update(m_fatherChromosomes, m_fatherChromosomes.size());
     m_hash->Final(randomNumber);

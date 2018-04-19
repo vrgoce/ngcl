@@ -104,7 +104,7 @@ WhiteNoise::WhiteNoise():
  * so the number of events and the size of the pool can probably be lower too.
  * @return Random number with size 256 bits
  */
-uint256_t WhiteNoise::generate()
+byteArray32 WhiteNoise::generate()
 {
     unsigned int listWaves[Noice::NoiseNumberWaves];
     for(unsigned int i = 0; i < Noice::NoiseNumberWaves; i++)
@@ -117,7 +117,7 @@ uint256_t WhiteNoise::generate()
     }
     m_hash->Update((const uint8_t*)&listWaves, sizeof(unsigned int) * Noice::NoiseNumberWaves);
 
-    uint256_t oldNoice;
+    byteArray32 oldNoice;
     m_hash->Final(oldNoice);
     m_hash->Restart();
     m_hash->Update(oldNoice, oldNoice.size());

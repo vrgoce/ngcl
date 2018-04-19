@@ -50,6 +50,6 @@ private:
     uint8_t bytes[T_Size];
 };
 
-typedef ByteArray<32> uint256_t;
+typedef ByteArray<32> byteArray32;
 
 #endif // BYTEARRAY_H
